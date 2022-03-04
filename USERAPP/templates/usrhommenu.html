@@ -1,0 +1,203 @@
+{% extends 'usrhome.html' %}
+{% block content %}
+<link href="/static/usr/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary JavaScript plugins) -->
+<script type='text/javascript' src="/static/usr/js/jquery-1.11.1.min.js"></script>
+<!-- Custom Theme files -->
+<link href="/static/usr/css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    #myImg {
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    #myImg:hover {opacity: 0.7;}
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+    
+    /* Modal Content (image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+    
+    /* Caption of Modal Image */
+    #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
+    }
+    
+    /* Add Animation */
+    .modal-content, #caption {  
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+    
+    @-webkit-keyframes zoom {
+      from {-webkit-transform:scale(0)} 
+      to {-webkit-transform:scale(1)}
+    }
+    
+    @keyframes zoom {
+      from {transform:scale(0)} 
+      to {transform:scale(1)}
+    }
+    
+    /* The Close Button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+      .modal-content {
+        width: 100%;
+      }
+    }
+    </style>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+
+<!-- start menu -->
+<link href="/static/usr/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/usr/js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<script src="/static/usr/js/menu_jquery.js"></script>
+<script src="/static/usr/js/simpleCart.min.js"> </script>
+<section id="main-content">
+    <div class="container">
+        <div class="women_main">
+            <!-- start sidebar -->
+            <div class="col-md-3 s-d">  
+            <div class="w_sidebar">
+            <div class="w_nav1">
+                <h4>All</h4>
+                <ul>
+                    <li><a href="/usrhommenu">Houses & ROOMS</a></li>
+                   
+                </ul>	
+            </div>
+            <h3>filter by</h3>
+            <section  class="sky-form">
+                        <h4>catogories</h4>
+                            <div class="row1 scroll-pane">
+                                <div class="col col-4">
+                                    
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Flats</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Villas</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Houses and Rooms</label>
+                                </div>
+                            </div>
+            </section>
+            <section  class="sky-form">
+              <h4></h4>
+              <div class="row1 scroll-pane">
+                 
+            </section>
+            <section class="sky-form">
+                            
+            </section>
+        </div>
+         </div>
+        <!-- start content -->
+        <div class="col-md-9 w_content">
+            <div class="grids_of_4" >
+                {% for d in data %}
+                    <div class="grid1_of_4" style="height: 350px;width: 175px;">
+                        <div class="content_box">                                            
+                            <img id="myImg" src="/media/{{d.5}}"width="110"  height="110" alt=""/>
+                            <div id="myModal" class="modal">
+                                <span class="close">&times;</span>
+                                <img class="modal-content" id="img01">
+                                <div id="caption"></div>
+                            </div>
+                            <h4><a href="#"> Product id:{{d.10}}</a></h4>
+                            <div class="item_add"><span class="item_price"><h5>Price:{{d.11}}</h5></span></div>
+                            <div class="item_add"><span class="item_price" style="margin-bottom: 0px;"><a href="/booking?pdt_id={{d.10}}&price={{d.11}}&pdt_type={{d.1}}">Details</a></span></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>  
+      <!-- end grids_of_4 -->
+    <div class="clearfix"></div>
+        
+        <!-- end content -->
+    </div>
+    </div>
+   
+</section>
+</style>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+    </script>
+{% endblock %}
+    

@@ -1,0 +1,165 @@
+{% extends 'usrhome.html' %}
+{% block content %}
+
+<section id="main-content">
+    <div class="container">
+    <div class="main">
+        <!-- start registration -->
+        <div class="registration">
+            <div class="registration_left">
+            <h2>ADD <span>HOUSE</span></h2>
+            <!-- [if IE] 
+                < link rel='stylesheet' type='text/css' href='ie.css'/>  
+             [endif] -->  
+              
+            <!-- [if lt IE 7]>  
+                < link rel='stylesheet' type='text/css' href='ie6.css'/>  
+            <! [endif] -->  
+            <script>
+                (function() {
+            
+                // Create input element for testing
+                var inputs = document.createElement('input');
+                
+                // Create the supports object
+                var supports = {};
+                
+                supports.autofocus   = 'autofocus' in inputs;
+                supports.required    = 'required' in inputs;
+                supports.placeholder = 'placeholder' in inputs;
+            
+                // Fallback for autofocus attribute
+                if(!supports.autofocus) {
+                    
+                }
+                
+                // Fallback for required attribute
+                if(!supports.required) {
+                    
+                }
+            
+                // Fallback for placeholder attribute
+                if(!supports.placeholder) {
+                    
+                }
+                
+                // Change text inside send button on submit
+                var send = document.getElementById('register-submit');
+                if(send) {
+                    send.onclick = function () {
+                        this.innerHTML = '...Sending';
+                    }
+                }
+            
+            })();
+            </script>
+             <div class="registration_form">
+                 
+             <!-- Form -->
+             {% if ms %}
+             <script>
+                 alert('Added your House Successfully!....');
+             </script>
+             {% endif %}
+                <form id="registration_form" action="#" method="post" enctype="multipart/form-data">
+                        {%csrf_token%}
+                    <div>
+                        <label>
+                            <input placeholder=" House name:" type="text" tabindex="1" name="t1" required autocomplete="Off">
+                        </label>
+                    </div>
+                    <div>
+                        <input type=""  name="t2" tabindex="1" value= "House type" disabled="disabled">
+                        <select name = "t2">
+                            <option value = "None">None</option>
+                            <option value = "House and Rooms">House and Rooms</option>
+                            <option value = "Villas">Villas</option>
+                            <option value = "Flats">Flats</option>
+                           
+
+
+                          </select>
+                    </div>
+                    <div>
+                      <label>
+                            <input placeholder="Descrption" type="text" tabindex="4"name="t3" required autocomplete="Off">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                             Availbilty<br> <input placeholder="starting_Date" type="date" tabindex="4" name="t4" required >starting_Date
+                          </label>
+                      </div>
+                      <div>
+                            <label>
+                                  <input placeholder="ending_Date" type="date" tabindex="4"name="t5" required>ending_Date
+                            </label>
+                        </div>
+                      <div>
+                            <label>
+                                <div>
+                                    <input type="file" accept="image/*" onchange="preview_image(event)" name="t6">
+                                    <img id="output_image" style="height: 250px;width: 175px;"/>
+                                </div>
+                                  <script type='text/javascript'>
+                                    function preview_image(event) 
+                                    {
+                                     var reader = new FileReader();
+                                     reader.onload = function()
+                                     {
+                                      var output = document.getElementById('output_image');
+                                      output.src = reader.result;
+                                     }
+                                     reader.readAsDataURL(event.target.files[0]);
+                                    }
+                                    </script>
+                                    
+                              </label>
+                          </div>
+                    <div>
+                        <label>
+                            <input placeholder="Location:" type="text" tabindex="6" name="t7" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input placeholder=" Price" type="number" tabindex="1" name="t11" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input placeholder="Vendor id:" type="text" tabindex="7" name="t8" value="{{uid}}" disabled="disabled">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input placeholder="password" type="password" tabindex="8"name="t9" value="{{password}}" disabled="disabled">
+                        </label>
+                    </div>		
+                    <div>
+                            <label>
+                                <input placeholder="phone" type="number" minlength="10" maxlength="20" tabindex="9"name="t10" required autofocus>
+                            </label>
+                        </div>							
+                    <div>
+                        <input type="submit" value="ADD" id="add_product" name="submit">
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <input placeholder="product_id:" type="text" tabindex="1"  value="{{pdt_id}}">Your product id :
+                        </label>
+                    </div>
+                    
+                </form>
+                <!-- /Form -->
+            </div>
+        </div>
+       
+        <div class="clearfix"></div>
+        </div>
+        <!-- end registration -->
+    </div>
+ </div>
+ </section>
+{% endblock %}

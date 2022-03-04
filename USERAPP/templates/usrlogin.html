@@ -1,0 +1,123 @@
+
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% csrf_token %} 
+
+<head>
+	<title>Domio|Login </title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Video Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+	<!-- css files -->
+	<link rel="stylesheet" href="/static/log/css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="/static/log/css/fontawesome-all.css">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Marck+Script&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext"
+        rel="stylesheet">
+    <link href='/static/usr/images/144_vitamin-D.png' rel='icon'/>
+	<!-- //web-fonts -->
+</head>
+
+<body>
+	<div class="video-w3l" data-vide-bg="/static/log/video/1.mp4">
+		<!-- title -->
+		<h1>
+			<span>H</span>ouse
+			<span>P</span>rice
+			<span>P</span>rediction
+			<span>S</span>ystem</h1>
+		<!-- //title -->
+		<!-- content --> 
+		<div class="sub-main-w3">
+				
+			   	  		   
+			   	<form action="#" method="post">
+				{%csrf_token%}
+				<div class="form-style-agile">
+					<label>
+						<i class="fas fa-user"></i>Id</label>
+					<input placeholder="email id" name="t1" type="text" required>
+				</div>
+				<div class="form-style-agile">
+					<label>
+						<i class="fas fa-unlock-alt"></i>Password</label>
+					<input placeholder="Password" name="t2" type="password" required>
+				</div>
+				
+				<!-- switch -->
+				<div class="checkout-w3l">
+					<div class="demo5">
+						<div class="switch demo3">
+							<input type="checkbox">
+							<label>
+								<i></i>
+							</label>
+						</div>
+					</div>
+					<a href="/photogallery">Remember Me &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				</div>
+				<script type="text/javascript">
+					function blink() {
+					  var blinks = document.getElementsByTagName('blink');
+					  for (var i = blinks.length - 1; i >= 0; i--) {
+						var s = blinks[i];
+						s.style.visibility = (s.style.visibility === 'visible') ? 'hidden' : 'visible';
+					  }
+					  window.setTimeout(blink, 1000);
+					}
+					if (document.addEventListener) document.addEventListener("DOMContentLoaded", blink, false);
+					else if (window.addEventListener) window.addEventListener("load", blink, false);
+					else if (window.attachEvent) window.attachEvent("onload", blink);
+					else window.onload = blink;
+				</script>
+				<blink style="color: red; font: bold"><h3><b>{{alert}}</b></h3></blink>									
+				<!-- //switch -->
+				
+				<input type="submit" value="Log In" name="b1">
+				<label style="color: white;"></label><a href="/register">No account yet ? register here</a>
+				
+				<!-- social icons -->
+				
+				<!-- //social icons -->
+			</form>
+		</div>
+		<!-- //content -->
+
+		<!-- copyright -->
+		<div class="footer">
+			<p>
+	
+			</p>
+		</div>
+		<!-- //copyright -->
+	</div>
+
+	
+	<!-- Jquery -->
+	<script src="/static/log/js/jquery-2.2.3.min.js"></script>
+	<!-- //Jquery -->
+
+	<!-- Video js -->
+	<script src="/static/log/js/jquery.vide.min.js"></script>
+	<!-- //Video js -->
+	
+</body>

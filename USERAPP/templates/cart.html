@@ -1,0 +1,198 @@
+{% extends 'usrhome.html' %}
+{% block content %}
+<link href="/static/usr/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary JavaScript plugins) -->
+<script type='text/javascript' src="/static/usr/js/jquery-1.11.1.min.js"></script>
+<!-- Custom Theme files -->
+<link href="/static/usr/css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+<!-- start menu -->
+<link href="/static/usr/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/usr/js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<script src="/static/usr/js/menu_jquery.js"></script>
+<script src="/static/usr/js/simpleCart.min.js"> </script>
+<section id="main-content"></section>
+    <div class="container">
+	    <div class="check" style="width: 100%;">	 
+			<div class="col-lg-3 cart-total">
+			 <a class="continue" href="#">Continue to basket</a>
+			 <div class="price-details">
+				 <h3>Price Details</h3>
+				 <span>Total</span>
+				 <span class="total1">{{data2}}</span>
+				 <span>Discount</span>
+				 <span class="total1">---</span>
+				 <span>Delivery Charges</span>
+				 <span class="total1">0.00</span>
+				 <div class="clearfix"></div>				 
+			 </div>	
+			 <ul class="total_price">
+			   <li class="last_price"> <h4>TOTAL</h4></li>	
+			   <li class="last_price"><span>{{data2}}</span></li>
+			   <div class="clearfix"> </div>
+			 </ul>
+			
+			 
+			 <div class="clearfix"></div>
+			<a href="/payment1"><input type="submit" value="Place Order" id="register-submit" name="order"style="background: #00405d;
+			 padding: 10px 20px;
+			 font-size: 1em;
+			 color: #fff;
+			 text-decoration: none;
+			 display: block;
+			 font-weight: 600;
+			 text-align: center;
+			 margin-bottom: 2em;"></a>
+			 <div class="total-item">
+				 <h3>OPTIONS</h3>
+				 <h4>APPLY COUPONS</h4>
+				 <a class="cpns" href="#">Coupons</a>
+				 <p><a href="#">Log In</a> to use accounts - linked coupons</p>
+			 </div>
+			</div>
+		 <div class="col-lg-9 cart-items"  style="float: right;"  >
+			 <h1>My Shopping Bag</h1>
+				<script>$(document).ready(function(c) {
+					$('.close1').on('click', function(c){
+						$('.cart-header').fadeOut('slow', function(c){
+							$('.cart-header').remove();
+						});
+						});	  
+					});
+			   </script>
+			 
+			 
+			 <script>$(document).ready(function(c) {
+					$('.close2').on('click', function(c){
+							$('.cart-header2').fadeOut('slow', function(c){
+						$('.cart-header2').remove();
+					});
+					});	  
+					});
+			 </script>
+			
+			
+				<div class="cart-header" style="width:100%" >
+					<div class="cart-sec simpleCart_shelfItem "  style="width:100%">
+							{% for e in data %}
+							<span>___________________________________________________________________________</span>
+								<div class="cart-item-info col-lg-4"  style="float:left; width:50%; height:150px;">
+									<tr>Product type:{{e.2}}</tr><br>
+									<tr>Product Id:{{e.3}}</tr><br>
+									<tr>Start_date:{{e.5}}</tr><br>
+									<tr>End_date:{{e.6}}</tr><br>
+									<tr>No.of days:{{e.8}}</tr><br>
+									<tr><b>Price:{{e.4}}</b></tr>	
+								</div>
+								<div class="cart-item cyc col-lg-8" style="float:left;">
+									<img src="/media/{{e.7}} "  class="img-responsive" alt=""/>
+								</div>
+								
+							{% endfor %}
+							
+					</div>
+				</div>	
+			</div>	  
+				<div class="clearfix"></div>
+									   
+					 </div>
+				</div>
+				<script>$(document).ready(function(c) {
+					   $('.close2').on('click', function(c){
+							   $('.cart-header2').fadeOut('slow', function(c){
+						   $('.cart-header2').remove();
+					   });
+					   });	  
+					   });
+				</script>
+		 		
+		
+			<div class="clearfix"> </div>
+	 </div>
+	 </div>
+<div class="foot-top">
+	<div class="container">
+		<div class="col-md-6 s-c">
+			<li>
+				<div class="fooll">
+					<h5>follow us on</h5>
+				</div>
+			</li>
+			<li>
+				<div class="social-ic">
+					<ul>
+						<li><a href="#"><i class="facebok"> </i></a></li>
+						<li><a href="#"><i class="twiter"> </i></a></li>
+						<li><a href="#"><i class="goog"> </i></a></li>
+						<li><a href="#"><i class="be"> </i></a></li>
+						<li><a href="#"><i class="pp"> </i></a></li>
+							<div class="clearfix"></div>	
+					</ul>
+				</div>
+			</li>
+				<div class="clearfix"> </div>
+		</div>
+		<div class="col-md-6 s-c">
+			<div class="stay">
+						<div class="stay-left">
+							<form>
+								<input type="text" placeholder="Enter your email to join our newsletter" required="">
+							</form>
+						</div>
+						<div class="btn-1">
+							<form>
+								<input type="submit" value="join">
+							</form>
+						</div>
+							<div class="clearfix"> </div>
+			</div>
+		</div>
+			<div class="clearfix"> </div>
+	</div>
+</div>
+<div class="footer">
+	<div class="container">
+		<div class="col-md-3 cust">
+			<h4>CUSTOMER CARE</h4>
+				<li><a href="/contact">Help Center</a></li>
+				<li><a href="/contact">FAQ</a></li>
+				<li><a href="/contact">How To Buy</a></li>
+				<li><a href="/cart">Delivery</a></li>
+		</div>
+		<div class="col-md-2 abt">
+			<h4>ABOUT US</h4>
+				<li><a href="/photogallery">Our Stories</a></li>
+				<li><a href="/photogallery">Press</a></li>
+				<li><a href="/photogallery">Career</a></li>
+				<li><a href="/contact">Contact</a></li>
+		</div>
+		<div class="col-md-2 myac">
+			<h4>MY ACCOUNT</h4>
+				<li><a href="/register">Register</a></li>
+				<li><a href="/cart">My Cart</a></li>
+				<li><a href="/cart">Order History</a></li>
+				<li><a href="/cart">Payment</a></li>
+		</div>
+		<div class="col-md-5 our-st">
+			<div class="our-left">
+				<h4>DOMIO RENTAL PORT</h4>
+			</div>
+			
+			<div class="clearfix"> </div>
+				<li><i class="add"> </i>WWW.DOMIO.COM</li>
+				<li><i class="phone"> </i>+7012698790</li>
+                <li><a href="mailto:info@example.com"><i class="mail"> </i>info@domio.com </a></li>
+            </div>
+        </div>
+    </div> 
+</section>
+{% endblock %}

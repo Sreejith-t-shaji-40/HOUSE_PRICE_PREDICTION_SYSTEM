@@ -1,0 +1,182 @@
+{% extends 'product.html' %}
+{% block content %}
+<link href="/static/usr/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary JavaScript plugins) -->
+<script type='text/javascript' src="/static/usr//static/usr/js/jquery-1.11.1.min.js"></script>
+<!-- Custom Theme files -->
+<link href="/static/usr/css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+<!-- start menu -->
+<link href="/static/usr/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/usr/js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<script src="/static/usr/js/menu_jquery.js"></script>
+<!-- content -->
+<section id="main-content">
+    <div class="container">
+    <div class="main">
+        <!-- start registration -->
+        <div class="registration">
+            <div class="registration_left">
+            <h2>UPDATE<span>PRODUCT</span></h2>
+            <!-- [if IE] 
+                < link rel='stylesheet' type='text/css' href='ie.css'/>  
+             [endif] -->  
+              
+            <!-- [if lt IE 7]>  
+                < link rel='stylesheet' type='text/css' href='ie6.css'/>  
+            <! [endif] -->  
+            <script>
+                (function() {
+            
+                // Create input element for testing
+                var inputs = document.createElement('input');
+                
+                // Create the supports object
+                var supports = {};
+                
+                supports.autofocus   = 'autofocus' in inputs;
+                supports.required    = 'required' in inputs;
+                supports.placeholder = 'placeholder' in inputs;
+            
+                // Fallback for autofocus attribute
+                if(!supports.autofocus) {
+                    
+                }
+                
+                // Fallback for required attribute
+                if(!supports.required) {
+                    
+                }
+            
+                // Fallback for placeholder attribute
+                if(!supports.placeholder) {
+                    
+                }
+                
+                // Change text inside send button on submit
+                var send = document.getElementById('register-submit');
+                if(send) {
+                    send.onclick = function () {
+                        this.innerHTML = '...Sending';
+                    }
+                }
+            
+            })();
+            </script>
+             <div class="registration_form">
+                 
+             <!-- Form -->
+             {% if ms %}
+             <script>
+                 alert('Updated Your House Successfully!....');
+             </script>
+             {% endif %}
+             <form id="registration_form" action="#" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                <div>
+                    <label>
+                        <input placeholder=" product name:" type="text" tabindex="1" name="t1" required>
+                    </label>
+                </div>
+                <div>
+                    <input type=""  name="t2" tabindex="1" value= "House type" required>
+                    <select name = "t2">
+                        <option value = "None">None</option>
+                        <option value = "House and Rooms">House and Rooms</option>
+                        <option value = "House and Rooms">villas</option>
+                        <option value = "House and Rooms">Flats</option>
+                       </select>
+                </div>
+                <div>
+                  <label>
+                        <input placeholder="Descrption" type="text" tabindex="3"name="t3" required>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                         Availbilty<br> <input placeholder="starting_Date" type="date" tabindex="4" name="t4" required >starting_Date
+                      </label>
+                  </div>
+                  <div>
+                        <label>
+                              <input placeholder="ending_Date" type="date" tabindex="4"name="t5" required>ending_Date
+                          </label>
+                      </div>
+                      <div>
+                            <label>
+                                <div>
+                                    <input type="file" accept="image/*" onchange="preview_image(event)" name="t6">
+                                    <img id="output_image" style="height: 250px;width: 555px;"/>
+                                </div>
+                              <script type='text/javascript'>
+                                    function preview_image(event) 
+                                    {
+                                    var reader = new FileReader();
+                                    reader.onload = function()
+                                    {
+                                    var output = document.getElementById('output_image');
+                                    output.src = reader.result;
+                                    }
+                                    reader.readAsDataURL(event.target.files[0]);
+                                    }
+                                </script>
+                            </label>
+                      </div>
+                <div>
+                <div>
+                    <label>
+                        <input placeholder="Location:" type="text" tabindex="6" name="t7" required>
+                    </label>
+                </div>
+                
+                <div>
+                    <label>
+                        <input placeholder=" Price" type="text" tabindex="1" name="t12" style="width: 150" height="150" required>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input placeholder="Vendor id:" type="text" tabindex="7" name="t8" value="{{uid}}" disabled="disabled">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input placeholder="password" type="password" tabindex="8"name="t9" value="{{password}}" disabled="disabled">
+                    </label>
+                </div>		
+                <div>
+                        <label>
+                            <input placeholder="phone" type="text" tabindex="9"name="t10" required>
+                        </label>
+               </div>	
+               <div>
+                    <label>
+                        <input placeholder=" product id:" type="text" tabindex="1" name="t11" required>
+                    </label>
+                </div>						
+                <div>
+                    <div>
+                         <input type="submit" value="UPDATE PRODUCT" id="update_product"name="submit">
+                    </div>
+                   
+                </form>
+                <!-- /Form -->
+            </div>
+        </div>
+       
+        <div class="clearfix"></div>
+        </div>
+        <!-- end registration -->
+    </div>
+ </div>
+ </section>
+{% endblock %}

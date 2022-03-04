@@ -1,0 +1,132 @@
+{% extends 'usrhome.html' %}
+{% block notify %}
+<link href="/static/usr/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary JavaScript plugins) -->
+<script type='text/javascript' src="/static/usr/js/jquery-1.11.1.min.js"></script>
+<!-- Custom Theme files -->
+<link href="/static/usr/css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+<!-- start menu -->
+<link href="/static/usr/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/usr/js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<script src="/static/usr/js/menu_jquery.js"></script>
+<script src="/static/usr/js/simpleCart.min.js"> </script>
+<section id="main-content"></section>
+    <div class="container">
+	    <div class="check">	 
+			<div class="col-md-12 cart-total">
+             <a class="continue" href="#">Notifications</a>
+             <h4 style="color:black;">Hello User,Welcome to <b>DOMIO</b>,here Your account details</h4>
+             <h4 style="color:black;"><b>User id</b> : {{uid}}</h4>
+             <h4 style="color:black;"><b>Password</b> : {{password}}</h4>
+            </div>
+        </div>
+	</div>
+	{% for d in data2 %}		 
+		<div class="container">
+	    	<div class="check">	 
+				<div class="col-md-12 cart-total">	
+					<h4 style="color:darkblue;"><b>You added a product<span style="float: right;">{{d.12}}</span></b></h4>
+									<tr><b>Product Id:{{d.10}}</b></tr><br>
+									<tr>Product Name:{{d.0}}</tr><br>
+									<tr>Product type:{{d.1}}</tr><br>
+									<tr>Description:{{d.2}}</tr><br>
+									<tr>Start_date:{{d.3}}</tr><br>
+									<tr>End_date:{{d.4}}</tr><br>
+									<tr>Location:{{d.6}}</tr><br>
+									<tr><b>Price:{{d.11}}</b></tr><br>
+								<div class="cart-item cyc col-lg-8" style="float:left;">
+									<img src="/media/{{d.5}} "  class="img-responsive" alt=""/>
+								</div>
+             	</div>
+        	</div>
+    	</div>
+	{% endfor %}			
+ <div class="foot-top">
+	<div class="container">
+		<div class="col-md-6 s-c">
+			<li>
+				<div class="fooll">
+					<h5>follow us on</h5>
+				</div>
+			</li>
+			<li>
+				<div class="social-ic">
+					<ul>
+						<li><a href="#"><i class="facebok"> </i></a></li>
+						<li><a href="#"><i class="twiter"> </i></a></li>
+						<li><a href="#"><i class="goog"> </i></a></li>
+						<li><a href="#"><i class="be"> </i></a></li>
+						<li><a href="#"><i class="pp"> </i></a></li>
+							<div class="clearfix"></div>	
+					</ul>
+				</div>
+			</li>
+				<div class="clearfix"> </div>
+		</div>
+		<div class="col-md-6 s-c">
+			<div class="stay">
+						<div class="stay-left">
+							<form>
+								<input type="text" placeholder="Enter your email to join our newsletter" required="">
+							</form>
+						</div>
+						<div class="btn-1">
+							<form>
+								<input type="submit" value="join">
+							</form>
+						</div>
+							<div class="clearfix"> </div>
+			</div>
+		</div>
+			<div class="clearfix"> </div>
+	</div>
+</div>
+<div class="footer">
+	<div class="container">
+		<div class="col-md-3 cust">
+			<h4>CUSTOMER CARE</h4>
+				<li><a href="/contact">Help Center</a></li>
+				<li><a href="/contact">FAQ</a></li>
+				<li><a href="/contact">How To Buy</a></li>
+				<li><a href="/cart">Delivery</a></li>
+		</div>
+		<div class="col-md-2 abt">
+			<h4>ABOUT US</h4>
+				<li><a href="/photogallery">Our Stories</a></li>
+				<li><a href="/photogallery">Press</a></li>
+				<li><a href="/photogallery">Career</a></li>
+				<li><a href="/contact">Contact</a></li>
+		</div>
+		<div class="col-md-2 myac">
+			<h4>MY ACCOUNT</h4>
+				<li><a href="/register">Register</a></li>
+				<li><a href="/cart">My Cart</a></li>
+				<li><a href="/cart">Order History</a></li>
+				<li><a href="/cart">Payment</a></li>
+		</div>
+		<div class="col-md-5 our-st">
+			<div class="our-left">
+				<h4>DOMIO RENTAL PORT</h4>
+			</div>
+			
+			<div class="clearfix"> </div>
+				<li><i class="add"> </i>WWW.DOMIO.COM</li>
+				<li><i class="phone"> </i>+7012698790</li>
+                <li><a href="mailto:info@example.com"><i class="mail"> </i>info@domio.com </a></li>
+            </div>
+        </div>
+    </div> 
+</section>
+{% endblock %}
+
+    

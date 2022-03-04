@@ -1,0 +1,16 @@
+
+{% extends 'product.html' %}
+{% block content %}
+
+  
+<u><h2 style="color: green">ACCURACY FOR LINEAR REGRESSION</h2></u>
+
+<table class="table">
+    
+    <tr><td><th style="text-align: center">ACCURACY</th></td><td><th style="text-align: center">MEAN</th></td><td><th style="text-align: center">STANDARD DEVIATION</th></td></tr>
+   
+    <tr><td><td style="text-align: center">{{data.0.0}}</td></td><td><td style="text-align: center">{{data.0.1}}</td></td><td><td style="text-align: center">{{data.0.2}}</td></td></tr>
+    
+</table>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'register.html' %}
+{% block content %}
+              <!-- Form -->
+              <form id="registration_form" action="#" method="post" onSubmit = "return checkPassword(this)">
+                {%csrf_token%}
+            <div>
+                <label>
+                    <input placeholder="first name:" type="text" tabindex="1"  name="t1" required autofocus>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input placeholder="last name:" type="text" tabindex="2" name="t2" required autofocus>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input placeholder="email address:" type="email" tabindex="3" name="t3" required>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input placeholder="Address:" type="text" tabindex="4" name="t4"required>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input placeholder="Location:" type="text" tabindex="5" name="t5" required>
+                </label>
+            </div>
+            <div class="sky-form">
+                <div class="sky_form1">
+                    <ul>
+                        <li><label class="radio left"><input type="radio" name="r1"  id="r1" value="male"><i></i>Male</label></li>
+                        <li><label class="radio"><input type="radio" name="r1" value="Female" id="r2" ><i></i>Female</label></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <label>
+                    <input placeholder="password" type="password" tabindex="4" name="t6" required>
+                </label>
+            </div>						
+            <div>
+                <label>
+                    <input placeholder="retype password" type="password" tabindex="4" name="t7" required>
+                </label>
+            </div>	
+            <div>
+                <input type="submit" value="create an account" id="register-submit"name="b1">
+            </div>
+            
+            <div>
+                <label>
+                    <input placeholder="vendor_id:" type="text" tabindex="1"  value="{{vend_id}}">Your vendor id :
+                </label>
+            </div>
+            <script>
+                function checkPassword(form) {
+                   debugger;
+                   pass1 = form.t6.value;
+                   pass2 = form.t7.value;
+       
+                    if(pass1 != pass2){
+                      alert("Passwords do not match")
+                      return false;
+                   }
+                   else{
+                      alert("Registration Sucessfull \n Global registeration id {{vend_id}}")
+                     // return false;
+                   }
+                }
+             </script>
+        </form>
+            
+{% endblock %}

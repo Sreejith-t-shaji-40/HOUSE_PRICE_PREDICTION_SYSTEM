@@ -1,0 +1,187 @@
+{% extends 'usrhome.html' %}
+{% block vehmenu %}
+<link href="/static/usr/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary JavaScript plugins) -->
+<script type='text/javascript' src="/static/usr/js/jquery-1.11.1.min.js"></script>
+<!-- Custom Theme files -->
+<link href="/static/usr/css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+<!-- start menu -->
+<link href="/static/usr/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/usr/js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<script src="/static/usr/js/menu_jquery.js"></script>
+<script src="/static/usr/js/simpleCart.min.js"> </script>
+<section id="main- content">
+    <div class="container">
+        <div class="women_main">
+            <!-- start sidebar -->
+            <div class="col-md-3 s-d">  
+            <div class="w_sidebar">
+            <div class="w_nav1">
+                <h4>All</h4>
+                <ul>
+                    <li><a href="/usrhommenu">Houses & ROOMS</a></li>
+                    <li><a href="/usrvehmenu">VEHICLES</a></li>
+                    <li><a href="/usraudmenu">AUDITORIUM</a></li>
+                    <li><a href="/usrparmenu">PARTY RENTALS</a></li>
+                    <li><a href="/usrelemenu">ELECTRONIC GADGETS</a></li>
+                </ul>	
+            </div>
+            <h3>filter by</h3>
+            <section  class="sky-form">
+                        <h4>catogories</h4>
+                            <div class="row1 scroll-pane">
+                                <div class="col col-4">
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"checked=""><i></i>Apartments</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Flats</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Villas</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Houses</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>Hostels</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Hotels</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Lodge</label>
+                                </div>
+                            </div>
+            </section>
+            <section  class="sky-form">
+                        <h4>TYPE</h4>
+                            <div class="row1 scroll-pane">
+                                <div class="col col-4">
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"checked=""><i></i>1BHK</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>2BHK</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>3BHK</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>4BHK</label>
+                                </div>
+                          </div>
+            </section>
+            <section class="sky-form">
+                            <h4>discount</h4>
+                            <div class="row1 scroll-pane">
+                                <div class="col col-4">
+                                    <label class="radio"><input type="radio" name="radio" checked=""><i></i>60 % and above</label>
+                                    <label class="radio"><input type="radio" name="radio"><i></i>50 % and above</label>
+                                    <label class="radio"><input type="radio" name="radio"><i></i>40 % and above</label>
+                                </div>
+                                <div class="col col-4">
+                                    <label class="radio"><input type="radio" name="radio"><i></i>30 % and above</label>
+                                    <label class="radio"><input type="radio" name="radio"><i></i>20 % and above</label>
+                                    <label class="radio"><input type="radio" name="radio"><i></i>10 % and above</label>
+                                </div>
+                            </div>						
+            </section>
+        </div>
+         </div>
+        <!-- start content -->
+        <div class="col-md-9 w_content">
+            <div class="grids_of_4" >
+                {% for d in data %}
+                    <div class="grid1_of_4" style="height: 350px;width: 175px; ">
+                        <div class="content_box"><a href="details.html">                                            
+                            <img src="/media/{{d.5}}"width="110"  height="110" alt=""/></a>
+                            <h4><a href=""> Product id:{{d.10}}</a></h4>
+                            <h6 style="height:45px;"><a href="">{{d.2}}</a></h6>
+                            <h6><b>{{d.3}}&nbspto&nbsp{{d.4}}</b></h6>
+                            <div class="item_add"><span class="item_price"><h5>Rent per day:{{d.11}}</h5></span></div>
+                            <div class="item_add"><span class="item_price" style="margin-bottom: 0px;"><a href="/booking?pdt_id={{d.10}}&price={{d.11}}&pdt_type={{d.1}}">add to cart</a></span></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>  
+      
+      <!-- end grids_of_4 -->
+            
+            
+        </div>
+        <div class="clearfix"></div>
+        
+        <!-- end content -->
+    </div>
+    </div>
+    <div class="foot-top">
+        <div class="container">
+            <div class="col-md-6 s-c">
+                <li>
+                    <div class="fooll">
+                        <h5>follow us on</h5>
+                    </div>
+                </li>
+                <li>
+                    <div class="social-ic">
+                        <ul>
+                            <li><a href="#"><i class="facebok"> </i></a></li>
+                            <li><a href="#"><i class="twiter"> </i></a></li>
+                            <li><a href="#"><i class="goog"> </i></a></li>
+                            <li><a href="#"><i class="be"> </i></a></li>
+                            <li><a href="#"><i class="pp"> </i></a></li>
+                                <div class="clearfix"></div>	
+                        </ul>
+                    </div>
+                </li>
+                    <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-6 s-c">
+                <div class="stay">
+                            <div class="stay-left">
+                                <form>
+                                    <input type="text" placeholder="Enter your email to join our newsletter" required="">
+                                </form>
+                            </div>
+                            <div class="btn-1">
+                                <form>
+                                    <input type="submit" value="join">
+                                </form>
+                            </div>
+                                <div class="clearfix"> </div>
+                </div>
+            </div>
+                <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+	<div class="container">
+		<div class="col-md-3 cust">
+			<h4>CUSTOMER CARE</h4>
+				<li><a href="/contact">Help Center</a></li>
+				<li><a href="/contact">FAQ</a></li>
+				<li><a href="/contact">How To Buy</a></li>
+				<li><a href="/cart">Delivery</a></li>
+		</div>
+		<div class="col-md-2 abt">
+			<h4>ABOUT US</h4>
+				<li><a href="/photogallery">Our Stories</a></li>
+				<li><a href="/photogallery">Press</a></li>
+				<li><a href="/photogallery">Career</a></li>
+				<li><a href="/contact">Contact</a></li>
+		</div>
+		<div class="col-md-2 myac">
+			<h4>MY ACCOUNT</h4>
+				<li><a href="/register">Register</a></li>
+				<li><a href="/cart">My Cart</a></li>
+				<li><a href="/cart">Order History</a></li>
+				<li><a href="/cart">Payment</a></li>
+		</div>
+		<div class="col-md-5 our-st">
+			<div class="our-left">
+				<h4>DOMIO RENTAL PORT</h4>
+			</div>
+			
+			<div class="clearfix"> </div>
+				<li><i class="add"> </i>WWW.DOMIO.COM</li>
+				<li><i class="phone"> </i>+7012698790</li>
+                <li><a href="mailto:info@example.com"><i class="mail"> </i>info@domio.com </a></li>
+            </div>
+        </div>
+    </div> 
+</section>
+{% endblock %}
+    
