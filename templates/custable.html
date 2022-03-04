@@ -1,0 +1,56 @@
+{% extends 'home.html' %}
+{% block content %}
+<!-- Bootstrap core CSS -->
+<link href="static/admin/css/bootstrap.css" rel="stylesheet">
+<!--external css-->
+<link href="static/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    
+<!-- Custom styles for this template -->
+<link href="static/admin/css/style.css" rel="stylesheet">
+<link href="static/admin/css/style-responsive.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<section id="main-content">
+    <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Customer Database</h3>
+          <div class="row">
+          
+                <div class="col-md-12">
+                      <div class="content-panel">
+                            <hr>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>FIRST_NAME</th>
+                                <th>LAST_NAME</th>
+                                <th>EMAIL</th>
+                                <th>ADDRESS</th>
+                                <th>LOCATION</th>
+                                <th>GENDER</th>
+                                <th>PASSWORD</th>
+                                <th>RETYPE PASSWORD</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                          {% for e in data %}
+                          <tr><td>{{e.0}}</td><td>{{e.1}}</td><td>{{e.2}}</td><td>{{e.3}}</td><td>{{e.4}}</td><td>{{e.5}}</td><td>{{e.6}}</td><td>{{e.7}}</td></tr>
+                          {% endfor %}
+                          
+                            </tbody>
+                        </table>
+                      </div><! --/content-panel -->
+                </div><!-- /col-md-12 -->
+         </div>
+    </section>
+ </section>
+            
+
+
+    {% endblock %}
+
+   

@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Add Vendor </title>
+</head>
+<body>
+        <form method="GET" >
+            {% csrf_token %}
+           NAME   :<input  type="text" name="t1"><br><br>
+           AGE    :<input type="number" name="t2"><br><br>
+           GENDER : male <input type="radio"name="t3" id="t3">  female<input type="radio"name="t3" id="t4"><br><br>
+           ADDRESS: <input type="text"name="t5"><br><br>
+           ADD: <input type="submit" value="ADD" name="b1">
+           REMOVE: <input type="submit" value="REMOVE" name="b2">
+        </form>
+        {{name}}
+        {{age}}
+</body>

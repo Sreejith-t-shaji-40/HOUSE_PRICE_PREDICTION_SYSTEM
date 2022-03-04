@@ -1,0 +1,14 @@
+<html>
+    <head>forms</head>
+    <title>forms</title>
+    <h1>Form</h1>
+    <body>
+        <form method="POST" >
+            {% csrf_token %}
+           NAME   :<input  type="text" name="t1"><br><br>
+           AGE    :<input type="number" name="t2"><br><br>
+           DOB    :<input type="date" name="t3"><br><br>
+           SUBMIT: <input type="submit" value="SAVE" name="b1">
+        </form>
+    </body>
+</html>
